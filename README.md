@@ -94,7 +94,7 @@ Therefore, it was necessary to have an accuracy of the elo ratings. In the very 
 Now, there are some things to determine. Is 57% a good enough accuracy? Do we want the model to be predicting whether a team will win or lose just with a 57% accuracy? Even if you randomly choose any team, that will be prediction accuracy of 50%. Just 7% above the base accuracy? It is not worth it. Therefore, it was necessary to find more metrics to add or complement the elo rating for a higher accuracy. 
 
 # Enter BAR (Box score Above Replacement Player) 
-
+FiveThirtyEight has an amazing metric for the NBA that they have been developing for years of trial and error. 
 
 
 
