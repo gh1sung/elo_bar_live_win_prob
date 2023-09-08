@@ -65,5 +65,8 @@ So, after the match:
 - Player A's new rating is approximately 1510.8
 - Player B's new rating is approximately 1389.2
 
-# KOVO Example Run with R elo package
+*** Note that the amount that the winning team has gained in rating and the amount that the losing team has lost are equal. This is because Elo ratings are a zero-sum game, meaning that their NET total change are equal.***
 
+# KOVO Example Run with R elo package
+In codes elo18-19.R through elo22-23code.R are Elo rating runs of KOVO (Korean Volleyball Federation). 
+After collecting data for win/loss records for KOVO, we accumulated each team within the federation to run their elo ratings. All 14 teams (7 men, 7 women) started with a rating of 1500. Their K constant (the acceleration of the rating at which it increases/decreases) was determined using machine learning techniques for highest accuracy. 
