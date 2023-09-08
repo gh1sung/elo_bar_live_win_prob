@@ -71,4 +71,12 @@ So, after the match:
 In codes elo18-19.R through elo22-23code.R are Elo rating runs of KOVO (Korean Volleyball Federation). 
 After collecting data for win/loss records for KOVO, we accumulated each team within the federation to run their elo ratings. All 14 teams (7 men, 7 women) started with a rating of 1500. Their K constant (the acceleration of the rating at which it increases/decreases) was determined using machine learning techniques for highest accuracy. 
 
-An example of the result is displayed in file vnl_elo_ratings5.csv. You can see that 
+An example of the result is displayed in file vnl_elo_ratings5.csv. You can see that Team A starts with a rating of about 1600 and Team B starts with a rating of about 1496. This is because the initial ratings of 1500 for every team has been accumulated and carried over from the previous years. Hence, the final elo rating from the 18-19 season rolls over to the start of the next season (19-20) and so on. The final elo ratings of the five years of win and loss data can be seen on elo_amalgamation.xslx. 
+
+*** Note that all data for the win and loss of games are data by each set of a volleyball game. If wins.A = 1, then that means team.A won in the first set of that game. p.A is the probability of team.A winning (which is expected set score, maximum set score is 1 and minimum is 0, hence any number in between is that team's probability of earning that set score). Adding onto from the previous section, update.A and update.B are equal because of the zero-sum game.***
+
+
+
+
+
+
