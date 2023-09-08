@@ -1,2 +1,4 @@
-# elo_bar_live_win_prob
-Model that predicts live win probabilities of volleyball games, want to further develop for accuracy (and other sports)
+# Elo+Bar Win Prediction Model
+This model is a combination of Elo Ratings and BAR (box score above replacement player) that can predict live volleyball games with an accuracy range of 60~70%
+
+
