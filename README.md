@@ -70,3 +70,5 @@ So, after the match:
 # KOVO Example Run with R elo package
 In codes elo18-19.R through elo22-23code.R are Elo rating runs of KOVO (Korean Volleyball Federation). 
 After collecting data for win/loss records for KOVO, we accumulated each team within the federation to run their elo ratings. All 14 teams (7 men, 7 women) started with a rating of 1500. Their K constant (the acceleration of the rating at which it increases/decreases) was determined using machine learning techniques for highest accuracy. 
+
+An example of the result is displayed in file vnl_elo_ratings5.csv. You can see that 
