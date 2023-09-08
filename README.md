@@ -33,34 +33,37 @@ Outcome:
 Expected outcome (\(E_A\) for Player A):
 $$E_A = \frac{1}{{1 + 10^{((R_B - R_A)/400)}}}$$
 $$E_A = \frac{1}{{1 + 10^{((1400 - 1500)/400)}}}$$
-$$E_A ≈ 0.759746$$
+$$E_A ≈ 0.64$$
 
 Change in Player A's rating (\(ΔR_A\)):
 $$ΔR_A = K \cdot (S - E_A)$$
-$$ΔR_A = 30 \cdot (1 - 0.759746)$$
-$$ΔR_A ≈ 8.41138$$
+$$ΔR_A = 30 \cdot (1 - 0.64)$$
+$$ΔR_A ≈ 10.8$$
 
 New rating for Player A (\(R_A\)):
 $$R_A = R_A + ΔR_A$$
-$$R_A = 1500 + 8.41138$$
-$$R_A ≈ 1508.41138$$
+$$R_A = 1500 + 10.8$$
+$$R_A = 1510.8$$
 
 For Player B:
 Expected outcome (\(E_B\) for Player B):
 $$E_B = \frac{1}{{1 + 10^{((R_A - R_B)/400)}}}$$
-$$E_B = \frac{1}{{1 + 10^{((1508.41138 - 1400)/400)}}}$$
-$$E_B ≈ 0.240254$$
+$$E_B = \frac{1}{{1 + 10^{((1500 - 1400)/400)}}}$$
+$$E_B ≈ 0.36$$
 
 Change in Player B's rating (\(ΔR_B\)):
 $$ΔR_B = K \cdot (S - E_B)$$
-$$ΔR_B = 30 \cdot (0 - 0.240254)$$
-$$ΔR_B ≈ -7.20763$$
+$$ΔR_B = 30 \cdot (0 - 0.36)$$
+$$ΔR_B ≈ -10.8$$
 
 New rating for Player B (\(R_B\)):
 $$R_B = R_B + ΔR_B$$
-$$R_B = 1400 - 7.20763$$
-$$R_B ≈ 1392.79237$$
+$$R_B = 1400 - 10.8$$
+$$R_B ≈ 1389.2$$
 
 So, after the match:
-- Player A's new rating is approximately 1508.41
-- Player B's new rating is approximately 1392.79
+- Player A's new rating is approximately 1510.8
+- Player B's new rating is approximately 1389.2
+
+# KOVO Example Run with R elo package
+
