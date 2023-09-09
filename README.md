@@ -1,4 +1,4 @@
-# Elo+Bar Win Prediction Model
+# Elo+Bar Win Prediction Model for Volleyball
 This model is a combination of Elo Ratings and BAR (box score above replacement player) that can predict live volleyball games with an accuracy range of 60~70%
 
 # Elo Ratings
@@ -94,9 +94,16 @@ Therefore, it was necessary to have an accuracy of the elo ratings. In the very 
 Now, there are some things to determine. Is 57% a good enough accuracy? Do we want the model to be predicting whether a team will win or lose just with a 57% accuracy? Even if you randomly choose any team, that will be prediction accuracy of 50%. Just 7% above the base accuracy? It is not worth it. Therefore, it was necessary to find more metrics to add or complement the elo rating for a higher accuracy. 
 
 # Enter BAR (Box score Above Replacement Player) 
-FiveThirtyEight has an amazing metric for the NBA that they have been developing for years of trial and error. 
+FiveThirtyEight has an amazing metric for the NBA that they have been developing for years of trial and error. It is called the RAPTOR. This metric takes account of two major components that are blended together to rate players: a “box” (as in “box score”) component, which uses individual statistics (including statistics derived from player tracking and play-by-play data), and an “on-off” component, which evaluates a team’s performance when the player and various combinations of his teammates are on or off the floor. They account 75% of this and the rest with elo ratings. 
 
+More details:
+[FiveThirtyEight NBA Predictions Methodology](https://fivethirtyeight.com/methodology/how-our-nba-predictions-work/)
 
+With volleyball, and especially in Korea (KOVO), the market is very small. Small markets lead to small audience, small audience leads to less money circulating, less money circulating means brittle data base. Even if there is a market, it might only be just enough to maintain the current data base bank. The current private data bank gives access to basic box data and maybe some heat maps along with wins/losses. With this in mind, it was challenging to redesign something similar to that of FiveThirtyEight's RAPTOR metric, but the elo rating was already solidly established. All that was needed at this stage was something that is theoretically more logically sound. Even if by adding another metric and blending it with Elo meant that the accuracy falls, if it is the more logical solution, which it is, then it was worth a shot. 
+
+There was need of an individual metric that can be defined by itself, merges with the elo rating, and provides logical "information" about each individual player. If the metric does so, then changes made within the team will be reflected immediately, even by sets (starting and benches subbing in and out). 
+
+In baseball, there is a metric known as WAR: wins above replacement player. This metric  
 
 
 
