@@ -103,7 +103,19 @@ With volleyball, and especially in Korea (KOVO), the market is very small. Small
 
 There was need of an individual metric that can be defined by itself, merges with the elo rating, and provides logical "information" about each individual player. If the metric does so, then changes made within the team will be reflected immediately, even by sets (starting and benches subbing in and out). 
 
-In baseball, there is a metric known as WAR: wins above replacement player. This metric  
+In baseball, there is a metric known as WAR: wins above replacement player. This metric indicates how much a player is contributing to winning a game compared to the replacement player. Here, a replacement player can be defined as someone who can be signed with a minimum contract: the most average, easily "findable" player. 
+
+More details:
+[Wins Above Replacement (Wikipedia)](https://en.wikipedia.org/wiki/Wins_Above_Replacement)
+
+This metric gives an individual's approximate contribution to a team. It is also an absolute metric that can be used all across the league, meaning that the WAR is a unified metric that applies to everyone in the league. It does not limit its values to only the player's team. This allows the WAR of a player to be compared by another player in a different team. 
+
+Redefining WAR for volleyball using basic box score metrics that were available would help increase the accuracy of pure Elo. 
+The logic for BAR (Box score Above Replacement player) is straightforward and intuitive. 
+
+# How BAR works 
+
+
 
 
 
