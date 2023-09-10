@@ -117,9 +117,19 @@ The logic for BAR (Box score Above Replacement player) is straightforward and in
 Our goal was simple: follow the logical path that would allow us to reflect the game more than just wins/losses. 
 The simplest way to reflect a part of the game was to come up with a contribution metric, a metric that shows how much a player contributes to winning a set. We did that by adding 7 different categories: attack, blocks, serves, sets, receive, digs, minus error. All of the categories are simply those that are successful. Attacks, blocks, and serves must have led to a point. Sets, receive, and digs must have been a successful one. These were all displayed in the box score. 
 
+In order to see how we collected the box score data, look at image BoxScore_collection_ex. There, you can see we collected individual's data for all seven categories by sets in every game of the season. 
 
+After collecting the box score data, we standardized (normalization) all the seven categories (for every column) so that it is absolute (relatively comparable) to the rest of the data. Then, we calculated the contribution for a player. 
 
+$$ Contribution = std_attack + std_block + std_serve + std_set + std_receive + std_dig - std_error $$ 
 
+This amount pertains to the standardized total sum of how much a player has contributed to its team for the whole set. 
+
+To find the total number of contribution in a set, just add up all the contributions maded by every player who played for that specific set. 
+
+If player x, y, ..., N are players who played in set 1 of game 1, then 
+
+$$ Contribution_in_set = contribution of player x + contribution of player y +....+ contribution of player N $$
 
 
 
