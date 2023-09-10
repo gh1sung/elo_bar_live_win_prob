@@ -121,7 +121,7 @@ In order to see how we collected the box score data, look at image BoxScore_coll
 
 After collecting the box score data, we standardized (normalization) all the seven categories (for every column) so that it is absolute (relatively comparable) to the rest of the data. Then, we calculated the contribution for a player. 
 
-$$ Contribution = Attack_std + Block_std + Serve_std + Set_std + Receive_std + Dig_std - Error_std $$ 
+$$ Contribution = Attack_s_t_d + Block_s_t_d + Serve_std + Set_std + Receive_std + Dig_std - Error_std $$ 
 
 This amount pertains to the standardized total sum of how much a player has contributed to its team for the whole set. 
 
