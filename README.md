@@ -114,7 +114,8 @@ Redefining WAR for volleyball using basic box score metrics that were available 
 The logic for BAR (Box score Above Replacement player) is straightforward and intuitive. 
 
 # How BAR works 
-
+Our goal was simple: follow the logical path that would allow us to reflect the game more than just wins/losses. 
+The simplest way to reflect a part of the game was to come up with a contribution metric, a metric that shows how much a player contributes to winning a set. We did that by adding 7 different categories: attack, blocks, serves, sets, receive, digs, minus error. All of the categories are simply those that are successful. Attacks, blocks, and serves must have led to a point. Sets, receive, and digs must have been a successful one. These were all displayed in the box score. 
 
 
 
