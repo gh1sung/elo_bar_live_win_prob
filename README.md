@@ -117,7 +117,7 @@ The logic for BAR (Box score Above Replacement player) is straightforward and in
 Our goal was simple: follow the logical path that would allow us to reflect the game more than just wins/losses. 
 The simplest way to reflect a part of the game was to come up with a contribution metric, a metric that shows how much a player contributes to winning a set. We did that by adding 7 different categories: attack, blocks, serves, sets, receive, digs, minus error. All of the categories are simply those that are successful. Attacks, blocks, and serves must have led to a point. Sets, receive, and digs must have been a successful one. These were all displayed in the box score. 
 
-In order to see how we collected the box score data, look at image BoxScore_collection_ex. There, you can see we collected individual's data for all seven categories by sets in every game of the season. 
+In order to see how we collected the box score data, look at file BoxScore_collection_ex. There, you can see we collected individual's data for all seven categories by sets in every game of the season. 
 
 After collecting the box score data, we standardized (normalization) all the seven categories (for every column) so that it is absolute (relatively comparable) to the rest of the data. Then, we calculated the contribution for a player. 
 
@@ -129,7 +129,41 @@ To find the total number of contribution in a set, just add up all the contribut
 
 If player x, y, ..., N are players who played in set 1 of game 1, then 
 
-$$ SetContribution_ = contribution_X + contribution_Y +....+ contribution_N $$
+$$ SetContribution = contribution_X + contribution_Y +....+ contribution_N $$
+
+In file boxscore2122 (which is the boxscore of season 21-22 collected, standardized, and amalgamated for contribution), there is column "contribution" and "cont_in_set," which is the total amount of contribution in that particular set (so all of the contribution of players who played in that set). "true_cont" is just a percentage of contribution/cont_in_set. This would tell the percentage of a player's contribution in a set. For exmaple, if player A has a 10% contribution, that means that player contributed 10% to the box score (using the 7 metrics explained above) for that set. 
+
+In file bar21-22, there are three columns: player, contribution, WAR (which is just BAR). Here, the contribution column is the player's average contribution for the whole season. 
+The average contribution for the whole league (which is just the average of the column contribution in file bar21-22) is 2.522785849. This can be defined as the most "average" contribution that an average player can give per set to a team. Albeit straying a little off from the original definition of "replacement player," the amount that is being "taken away" is relative. This means that the same amount is being taken away for every single player. Hence, BAR really is just the excess amount of contribution of box score that a player gives in a set compared to the average player of the league. The third column is a standardization of the BAR column. 
+
+# Merging Elo and BAR
+Now, it's time to merge the two metrics. Figuring out how to merge this in a logical way took a long time, but in the end, there was a simple mathematical logic that was acceptable. Again, even if it meant that the original accuracy of pure Elo being 57% was damaged, merging BAR was a correct logical way to portray aspects of the game that was not being accounted with only Elo ratings. 
+
+In order to predict the 22-23 season (because that was the only data available to cross check for accuracy), we standardized the final Elo rating for the 21-22 season. Also, each player's standardized BAR was layered in respect to the starting line up for each set. 
+
+For example, if Team A had a starting line up of players 1,2,3,4, and 5, then their standardized BAR was collected from the standardized contribution column. 
+Let's say that players 1-5 had the respective std BAR: 0.906, 0.561, 0.503, 0.396, 0.886, 0.789, 0.613
+The average would be (0.906 + 0.561 + 0.503 + 0.396 + 0.886 + 0.789 + 0.613)/7 = 0.665
+That is their strength of the starting line up's BAR. Now, we combine this BAR metric with Elo. 
+
+Team A's Elo rating standardized is 1, for example, which would simply mean that they are the best team in the league. 
+
+If we average Team A's Elo rating of 1 and their starting line up BAR, we would get their final strength where strength is calculated using the following: 
+
+$$ strength = (elo + BAR)/2 $$
+
+Team A's final strength would then be 0.8324. 
+
+Let's suppose some Team B would went against Team A had a strength of 0.5462. 
+
+From here, we can finally solve the the probability that Team A (or B) is going to win against its opponent. 
+
+$$ p.A = strength.A/(strength.A + strength.B) $$
+
+In this example, this set ended up being a 25:21 win by Team A. 
+
+What did the model predict? It predicted that Team A will win by a 60.38% and that Team B will win by 39.62%. 
+If the game resulted in a different way, either the model is not accurate enough or it can be determined an "upset," which happens in sports all the time and a big part of why it's so entertaining. People are always in it for the underdog team beating the super team. 
 
 
 
