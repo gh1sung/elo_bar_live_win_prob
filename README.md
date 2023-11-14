@@ -165,8 +165,11 @@ In this example, this set ended up being a 25:21 win by Team A.
 What did the model predict? It predicted that Team A will win by a 60.38% and that Team B will win by 39.62%. 
 If the game resulted in a different way, either the model is not accurate enough or it can be determined an "upset," which happens in sports all the time and a big part of why it's so entertaining. People are always in it for the underdog team beating the super team. 
 
+## License
+This project is open-source and available under the MIT License.
 
-
+## Acknowledgements
+Credit to KOVO Data Base Bank [http://dbbank.kovo.co.kr/] for providing the data used in this analysis.
 
 
 
